@@ -1,8 +1,15 @@
 rules_version = '2';
+
 service cloud.firestore {
   match /databases/{database}/documents {
     match /trips/ayala-bat-mitzvah-2026 {
-      allow read, write: if request.auth != null;
+
+      // כל משתמש מחובר, כולל אורח אנונימי, יכול לצפות
+      allow read: if request.auth != null;
+
+      // רק החשבון המשפחתי שלנו יכול לעדכן
+      allow write: if request.auth != null
+                   && request.auth.uid == "PPJ2jQlEbmVriEZz1p9WGR5TDTs1";
     }
   }
 }
