@@ -45,20 +45,8 @@ footer{text-align:center;color:#64748b;padding:35px 10px 50px}
 .progress-track{height:10px;background:#e2e8f0;border-radius:99px;flex:1;overflow:hidden}
 .progress-fill{height:100%;width:0;background:#16a34a;transition:.25s}
 .progress-text{font-weight:900;white-space:nowrap}
-.reset{border:0;background:#f1f5f9;border-radius:10px;padding:8px 12px;cursor:pointer;font-family:inherit;font-weight:700}
+.reset{border:0;background:#f1f5f9;border-radius:10px;padding:8px 12px;cursor:pointer;font-family:inherit;font-weight:700}.family-login{border:0;background:#2563eb;color:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;font-family:inherit;font-weight:800}.family-logout{border:0;background:#e2e8f0;color:#334155;border-radius:10px;padding:8px 12px;cursor:pointer;font-family:inherit;font-weight:800}.viewer-mode .check-event{cursor:default}.login-overlay{position:fixed;inset:0;background:#0f172a99;z-index:9999;display:none;align-items:center;justify-content:center;padding:18px}.login-overlay.show{display:flex}.login-card{width:min(390px,94vw);background:#fff;border-radius:20px;padding:22px;box-shadow:0 25px 70px #0004}.login-card h3{margin:0 0 8px}.login-card p{margin:0 0 14px;color:#64748b}.login-card input{width:100%;padding:11px 12px;margin:5px 0;border:1px solid #cbd5e1;border-radius:10px;font:inherit;direction:ltr}.login-row{display:flex;gap:8px;margin-top:10px}.login-row button{flex:1;border:0;border-radius:10px;padding:10px;font:inherit;font-weight:800;cursor:pointer}.login-ok{background:#16a34a;color:#fff}.login-cancel{background:#f1f5f9}.login-error{min-height:18px;color:#b91c1c;font-size:13px;font-weight:700;margin-top:7px}
 @media(max-width:700px){.check-event{grid-template-columns:82px 28px 1fr 28px}.live-status{font-weight:800;font-size:12px;padding:6px 10px;border-radius:999px;background:#f1f5f9}.live-status.online{background:#dcfce7;color:#166534}.live-status.error{background:#fee2e2;color:#991b1b}.live-status.setup{background:#fef3c7;color:#92400e}.progress-box{font-size:13px}.reset{padding:7px}}
-
-
-.auth-actions{display:flex;gap:8px;align-items:center}
-.family-btn,.logout-btn{border:0;border-radius:10px;padding:8px 12px;cursor:pointer;font-family:inherit;font-weight:800}
-.family-btn{background:#1d4ed8;color:#fff}.logout-btn{background:#fee2e2;color:#991b1b}
-.viewer-mode .check-event{cursor:default}.viewer-mode .tick{opacity:.65}
-.login-overlay{position:fixed;inset:0;background:#0f172a99;z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}
-.login-overlay.show{display:flex}.login-card{width:min(430px,94vw);background:#fff;border-radius:22px;padding:25px;box-shadow:0 25px 70px #0004}
-.login-card h3{margin:0 0 8px;font-size:24px}.login-card p{margin:0 0 18px;color:#64748b}
-.login-card input{width:100%;padding:12px 13px;margin:6px 0;border:1px solid #cbd5e1;border-radius:10px;font:inherit;direction:ltr}
-.login-buttons{display:flex;gap:8px;margin-top:12px}.login-buttons button{flex:1;border:0;border-radius:10px;padding:11px;cursor:pointer;font:inherit;font-weight:800}
-.login-submit{background:#16a34a;color:#fff}.login-cancel{background:#f1f5f9}.login-error{color:#b91c1c;font-size:13px;font-weight:700;min-height:18px;margin-top:8px}
 
 </style>
 </head>
@@ -79,25 +67,22 @@ footer{text-align:center;color:#64748b;padding:35px 10px 50px}
 
 
 <div class="progress-box">
-  <div class="live-status setup" id="liveStatus">׳׳×׳—׳‘׳¨ג€¦</div>
-  <div class="progress-text">ג… ׳”׳×׳§׳“׳׳•׳×: <span id="doneCount">0</span>/<span id="totalCount">0</span></div>
+  <div class="live-status setup" id="liveStatus">׳׳×׳—׳‘׳¨ג€¦</div><div class="progress-text">ג… ׳”׳×׳§׳“׳׳•׳×: <span id="doneCount">0</span>/<span id="totalCount">0</span></div>
   <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-  <div class="auth-actions">
-    <button class="family-btn" id="familyLoginBtn" type="button">נ” ׳›׳ ׳™׳¡׳× ׳׳©׳₪׳—׳”</button>
-    <button class="logout-btn" id="logoutBtn" type="button" hidden>׳™׳¦׳™׳׳” ׳׳¢׳¨׳™׳›׳”</button>
-    <button class="reset" id="resetBtn" type="button" hidden>׳׳™׳₪׳•׳¡ ׳¡׳™׳׳•׳ ׳™׳</button>
-  </div>
+  <button class="family-login" id="familyLoginBtn" type="button">נ” ׳›׳ ׳™׳¡׳× ׳׳©׳₪׳—׳”</button>
+  <button class="family-logout" id="logoutBtn" type="button" hidden>׳™׳¦׳™׳׳” ׳׳¢׳¨׳™׳›׳”</button>
+  <button class="reset" id="resetBtn" type="button" hidden>׳׳™׳₪׳•׳¡ ׳¡׳™׳׳•׳ ׳™׳</button>
 </div>
 
-<div class="login-overlay" id="loginOverlay" aria-hidden="true">
+<div class="login-overlay" id="loginOverlay">
   <div class="login-card">
     <h3>נ” ׳›׳ ׳™׳¡׳× ׳׳©׳₪׳—׳”</h3>
-    <p>׳”׳›׳ ׳™׳¡׳” ׳׳™׳•׳¢׳“׳× ׳׳“׳•׳“׳•, ׳׳™׳™׳׳” ׳•׳׳‘׳™׳ ׳•׳׳׳₪׳©׳¨׳× ׳׳¢׳“׳›׳ ׳׳× ׳”׳¡׳™׳׳•׳ ׳™׳.</p>
+    <p>׳›׳ ׳™׳¡׳” ׳׳“׳•׳“׳•, ׳׳™׳™׳׳” ׳•׳׳‘׳™׳ ׳׳¦׳•׳¨׳ ׳¢׳“׳›׳•׳ ׳”׳¡׳™׳׳•׳ ׳™׳.</p>
     <input id="familyEmail" type="email" placeholder="Email" autocomplete="username">
     <input id="familyPassword" type="password" placeholder="Password" autocomplete="current-password">
     <div class="login-error" id="loginError"></div>
-    <div class="login-buttons">
-      <button class="login-submit" id="loginSubmit" type="button">׳›׳ ׳™׳¡׳”</button>
+    <div class="login-row">
+      <button class="login-ok" id="loginSubmit" type="button">׳›׳ ׳™׳¡׳”</button>
       <button class="login-cancel" id="loginCancel" type="button">׳‘׳™׳˜׳•׳</button>
     </div>
   </div>
@@ -235,13 +220,7 @@ footer{text-align:center;color:#64748b;padding:35px 10px 50px}
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 import { getFirestore, doc, onSnapshot, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
-import {
-  getAuth,
-  signInAnonymously,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+import { getAuth, signInAnonymously, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB9Q1wtXmfK9zTdMNty6XmkZ_CwHeyiwes",
@@ -255,68 +234,56 @@ const firebaseConfig = {
 const FAMILY_UID = "PPJ2jQlEbmVriEZz1p9WGR5TDTs1";
 const tripDocId = "ayala-bat-mitzvah-2026";
 
-const statusEl = document.getElementById("liveStatus");
-const boxes = [...document.querySelectorAll(".donebox")];
-const resetBtn = document.getElementById("resetBtn");
-const familyLoginBtn = document.getElementById("familyLoginBtn");
-const logoutBtn = document.getElementById("logoutBtn");
-const loginOverlay = document.getElementById("loginOverlay");
-const loginSubmit = document.getElementById("loginSubmit");
-const loginCancel = document.getElementById("loginCancel");
-const loginError = document.getElementById("loginError");
-const emailInput = document.getElementById("familyEmail");
-const passwordInput = document.getElementById("familyPassword");
-
-let applyingRemote = false;
-let editorMode = false;
-
-function updateProgress(){
-  const done = boxes.filter(b => b.checked).length;
-  document.getElementById("doneCount").textContent = done;
-  document.getElementById("totalCount").textContent = boxes.length;
-  document.getElementById("progressFill").style.width =
-    (boxes.length ? done / boxes.length * 100 : 0) + "%";
-}
-
-boxes.forEach((b,i) => b.dataset.id = "task-" + i);
-updateProgress();
-
-function setEditorMode(enabled){
-  editorMode = enabled;
-  document.body.classList.toggle("viewer-mode", !enabled);
-  boxes.forEach(b => b.disabled = !enabled);
-  resetBtn.hidden = !enabled;
-  logoutBtn.hidden = !enabled;
-  familyLoginBtn.hidden = enabled;
-
-  if(enabled){
-    statusEl.textContent = "נ¢ ׳׳¦׳‘ ׳׳©׳₪׳—׳” ג€¢ ׳׳₪׳©׳¨ ׳׳¢׳“׳›׳";
-    statusEl.className = "live-status online";
-  } else {
-    statusEl.textContent = "נ‘€ ׳׳¦׳‘ ׳¦׳₪׳™׳™׳” ג€¢ ׳”׳¡׳™׳׳•׳ ׳™׳ ׳׳×׳¢׳“׳›׳ ׳™׳ ׳‘׳–׳׳ ׳׳׳×";
-    statusEl.className = "live-status online";
-  }
-}
-
-function openLogin(){
-  loginError.textContent = "";
-  passwordInput.value = "";
-  loginOverlay.classList.add("show");
-  loginOverlay.setAttribute("aria-hidden","false");
-  setTimeout(() => emailInput.focus(), 50);
-}
-
-function closeLogin(){
-  loginOverlay.classList.remove("show");
-  loginOverlay.setAttribute("aria-hidden","true");
-}
-
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 const ref = doc(db, "trips", tripDocId);
 
-setEditorMode(false);
+const statusEl = document.getElementById("liveStatus");
+const boxes = [...document.querySelectorAll(".donebox")];
+const resetBtn = document.getElementById("resetBtn");
+const familyLoginBtn = document.getElementById("familyLoginBtn");
+const logoutBtn = document.getElementById("logoutBtn");
+const overlay = document.getElementById("loginOverlay");
+const emailEl = document.getElementById("familyEmail");
+const passwordEl = document.getElementById("familyPassword");
+const loginError = document.getElementById("loginError");
+const loginSubmit = document.getElementById("loginSubmit");
+
+let applyingRemote = false;
+let editorMode = false;
+let editPromptShown = false;
+
+boxes.forEach((b,i)=> b.dataset.id = "task-"+i);
+
+function updateProgress(){
+  const done = boxes.filter(b => b.checked).length;
+  document.getElementById("doneCount").textContent = done;
+  document.getElementById("totalCount").textContent = boxes.length;
+  document.getElementById("progressFill").style.width = (boxes.length ? done/boxes.length*100 : 0) + "%";
+}
+
+function setMode(isEditor){
+  editorMode = isEditor;
+  document.body.classList.toggle("viewer-mode", !isEditor);
+  boxes.forEach(b => b.disabled = !isEditor);
+  familyLoginBtn.hidden = isEditor;
+  logoutBtn.hidden = !isEditor;
+  resetBtn.hidden = !isEditor;
+  statusEl.textContent = isEditor ? "נ¢ ׳׳¦׳‘ ׳׳©׳₪׳—׳” ג€¢ ׳ ׳™׳×׳ ׳׳¢׳“׳›׳" : "נ‘€ ׳¦׳₪׳™׳™׳” ׳‘׳׳‘׳“ ג€¢ ׳׳×׳¢׳“׳›׳ ׳‘׳–׳׳ ׳׳׳×";
+  statusEl.className = "live-status online";
+}
+
+function openLogin(){
+  loginError.textContent = "";
+  passwordEl.value = "";
+  overlay.classList.add("show");
+  setTimeout(()=>emailEl.focus(),50);
+}
+function closeLogin(){ overlay.classList.remove("show"); }
+
+updateProgress();
+setMode(false);
 
 onSnapshot(ref, snap => {
   if(!snap.exists()) return;
@@ -333,9 +300,8 @@ onSnapshot(ref, snap => {
 
 onAuthStateChanged(auth, async user => {
   if(!user){
-    try {
-      await signInAnonymously(auth);
-    } catch(err){
+    try { await signInAnonymously(auth); }
+    catch(err){
       statusEl.textContent = "נ”´ ׳׳ ׳ ׳™׳×׳ ׳׳”׳×׳—׳‘׳¨";
       statusEl.className = "live-status error";
       console.error(err);
@@ -343,93 +309,69 @@ onAuthStateChanged(auth, async user => {
     return;
   }
 
-  const isFamily = !user.isAnonymous && user.uid === FAMILY_UID;
-  setEditorMode(isFamily);
+  const family = !user.isAnonymous && user.uid === FAMILY_UID;
+  setMode(family);
 
-  // ׳§׳™׳©׳•׳¨ ׳”׳׳©׳₪׳—׳”: ׳׳•׳¡׳™׳₪׳™׳ ?edit=1 ׳׳¡׳•׳£ ׳”׳›׳×׳•׳‘׳×.
-  // ׳׳ ׳¢׳“׳™׳™׳ ׳׳ ׳׳—׳•׳‘׳¨׳™׳, ׳—׳׳•׳ ׳”׳›׳ ׳™׳¡׳” ׳™׳™׳₪׳×׳— ׳׳•׳˜׳•׳׳˜׳™׳×.
-  const wantsEdit = new URLSearchParams(location.search).get("edit") === "1";
-  if(wantsEdit && !isFamily && user.isAnonymous){
+  if(new URLSearchParams(location.search).get("edit") === "1" && !family && !editPromptShown){
+    editPromptShown = true;
     openLogin();
   }
 });
 
 boxes.forEach(b => b.addEventListener("change", async () => {
-  if(applyingRemote || !editorMode){
-    if(!editorMode) b.checked = !b.checked;
-    return;
-  }
-
+  if(applyingRemote || !editorMode) return;
   updateProgress();
   const tasks = {};
   boxes.forEach(x => tasks[x.dataset.id] = x.checked);
-
   try {
     await setDoc(ref, {tasks, updatedAt: serverTimestamp()}, {merge:true});
-  } catch(err){
-    statusEl.textContent = "נ”´ ׳”׳¢׳“׳›׳•׳ ׳׳ ׳ ׳©׳׳¨";
-    statusEl.className = "live-status error";
+  } catch(err) {
     console.error(err);
+    statusEl.textContent = "נ”´ ׳”׳©׳™׳ ׳•׳™ ׳׳ ׳ ׳©׳׳¨";
+    statusEl.className = "live-status error";
   }
 }));
 
-resetBtn.addEventListener("click", async () => {
-  if(!editorMode) return;
-  if(!confirm("׳׳׳₪׳¡ ׳׳× ׳›׳ ׳”׳¡׳™׳׳•׳ ׳™׳ ׳׳›׳•׳׳?")) return;
-
-  const tasks = {};
-  boxes.forEach(b => {
-    b.checked = false;
-    tasks[b.dataset.id] = false;
-  });
-  updateProgress();
-  await setDoc(ref, {tasks, updatedAt: serverTimestamp()}, {merge:true});
-});
-
 familyLoginBtn.addEventListener("click", openLogin);
-loginCancel.addEventListener("click", closeLogin);
-loginOverlay.addEventListener("click", e => {
-  if(e.target === loginOverlay) closeLogin();
-});
+document.getElementById("loginCancel").addEventListener("click", closeLogin);
+overlay.addEventListener("click", e => { if(e.target === overlay) closeLogin(); });
 
 loginSubmit.addEventListener("click", async () => {
-  const email = emailInput.value.trim();
-  const password = passwordInput.value;
-
-  if(!email || !password){
-    loginError.textContent = "׳™׳© ׳׳”׳–׳™׳ ׳׳™׳׳™׳™׳ ׳•׳¡׳™׳¡׳׳”.";
-    return;
-  }
+  const email = emailEl.value.trim();
+  const password = passwordEl.value;
+  if(!email || !password){ loginError.textContent = "׳™׳© ׳׳”׳–׳™׳ ׳׳™׳׳™׳™׳ ׳•׳¡׳™׳¡׳׳”."; return; }
 
   loginSubmit.disabled = true;
   loginError.textContent = "׳׳×׳—׳‘׳¨ג€¦";
-
   try {
     const cred = await signInWithEmailAndPassword(auth, email, password);
     if(cred.user.uid !== FAMILY_UID){
       await signOut(auth);
       await signInAnonymously(auth);
-      loginError.textContent = "׳”׳׳©׳×׳׳© ׳”׳–׳” ׳׳™׳ ׳• ׳׳•׳¨׳©׳” ׳׳¢׳¨׳™׳›׳”.";
+      loginError.textContent = "׳”׳׳©׳×׳׳© ׳׳™׳ ׳• ׳׳•׳¨׳©׳” ׳׳¢׳¨׳™׳›׳”.";
       return;
     }
     closeLogin();
-    loginError.textContent = "";
-  } catch(err){
+  } catch(err) {
     loginError.textContent = "׳”׳׳™׳׳™׳™׳ ׳׳• ׳”׳¡׳™׳¡׳׳” ׳׳™׳ ׳ ׳ ׳›׳•׳ ׳™׳.";
     console.error(err);
   } finally {
     loginSubmit.disabled = false;
   }
 });
-
-passwordInput.addEventListener("keydown", e => {
-  if(e.key === "Enter") loginSubmit.click();
-});
+passwordEl.addEventListener("keydown", e => { if(e.key === "Enter") loginSubmit.click(); });
 
 logoutBtn.addEventListener("click", async () => {
   await signOut(auth);
   await signInAnonymously(auth);
-  setEditorMode(false);
+});
+
+resetBtn.addEventListener("click", async ()=>{
+  if(!editorMode || !confirm("׳׳׳₪׳¡ ׳׳× ׳›׳ ׳”׳¡׳™׳׳•׳ ׳™׳ ׳׳›׳•׳׳?")) return;
+  const tasks={};
+  boxes.forEach(b=>{b.checked=false; tasks[b.dataset.id]=false});
+  updateProgress();
+  await setDoc(ref,{tasks,updatedAt:serverTimestamp()},{merge:true});
 });
 </script>
 
